@@ -10,9 +10,15 @@ const UserContext = ({children}) => {
             lastName:''
         }
     })
+    const [token,setToken] = useState('')
+
+    const value = {
+        user, setUser,
+        token,setToken
+    }
   return (
     <div>
-        <UserDataContext.Provider value={[user, setUser]}>
+        <UserDataContext.Provider value={{user, setUser}}>
             {children}
         </UserDataContext.Provider>
     </div>
